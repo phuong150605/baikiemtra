@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Hàng Hóa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 900px;
+            margin-top: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn-toolbar {
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Ứng dụng Quản lý Hàng Hóa</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Quản lý Hàng Hóa</h2>
+        
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 id="formTitle">Thêm Hàng Hóa Mới</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="hangHoaForm">
+                            <div class="form-group">
+                                <label for="ma_hanghoa">Mã Hàng Hóa (9 ký tự):</label>
+                                <input type="text" class="form-control" id="ma_hanghoa" maxlength="9" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ten_hanghoa">Tên Hàng Hóa:</label>
+                                <input type="text" class="form-control" id="ten_hanghoa" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="so_luong">Số Lượng:</label>
+                                <input type="number" class="form-control" id="so_luong" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ghi_chu">Ghi Chú:</label>
+                                <textarea class="form-control" id="ghi_chu"></textarea>
+                            </div>
+                            <div class="btn-toolbar">
+                                <button type="submit" class="btn btn-primary me-2">Lưu</button>
+                                <button type="button" id="resetBtn" class="btn btn-secondary">Làm mới</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-7">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Danh Sách Hàng Hóa</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Mã Hàng Hóa</th>
+                                        <th>Tên Hàng Hóa</th>
+                                        <th>Số Lượng</th>
+                                        <th>Ghi Chú</th>
+                                        <th>Thao Tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="hangHoaList">
+                                    <!-- Dữ liệu hàng hóa sẽ được hiển thị ở đây -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
